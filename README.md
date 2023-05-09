@@ -1,5 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipendenze necessarie per iniziare a lavorare.
 
+# Stack
+
+- [https://nextjs.org/docs/getting-started/installation](Next.js 13)
+- [https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/](Mongo DB)
+
+# Commits
+
+1. init Next.js:
+    - yarn create-next-app@latest
+        What is your project named?  Template
+        Would you like to add TypeScript with this project?  Y
+        Would you like to use ESLint with this project?  Y
+        Would you like to use Tailwind CSS with this project? Y
+        Would you like to use the `src/ directory` with this project? Y
+        What import alias would you like configured? @
+2. MongoDB
+    - yarn add mongodb
+    - [https://github.com/vercel/next.js/blob/canary/examples/with-mongodb/lib/mongodb.ts](file di connessione al database) src\lib\mongodb.ts
+    - pagina application per la verifica della connessione
 ## Getting Started
 
 First, run the development server:
