@@ -1,9 +1,7 @@
-import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
-import { InferGetServerSidePropsType } from 'next'
+import clientPromise from '../../lib/util.template.mongodb'
+import LoginComponent from '@/lib/component.template.login';
 
-
-export default async function Application() {
+export default async function Test() {
 
     let isConnected = false;
 
@@ -15,11 +13,14 @@ export default async function Application() {
         console.error(e)
     }
     return (
+        <>
         <p>
-            MongoDB
+            MongoDB:
             <span className={`${isConnected ? 'text-green-600' : 'text-red-800'}`}>
                 {isConnected ? ' connected' : ' not connected'}
             </span>
         </p>
+        <LoginComponent />
+        </>
     )
 }
