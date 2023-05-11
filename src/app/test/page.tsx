@@ -1,8 +1,8 @@
 import TestClientFetchServerSideSession from '@/components/test.template.clientFetchServerSideSession';
 import clientPromise from '../../lib/util.template.mongodb'
-import LoginComponent from '@/components/component.template.login';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import TestLoginComponent from '@/components/test.component.template.login';
 
 export default async function Test() {
 
@@ -26,7 +26,7 @@ export default async function Test() {
                 {isConnected ? ' connected' : ' not connected'}
             </span>
         </div>
-        <LoginComponent />
+        <TestLoginComponent />
         <TestClientFetchServerSideSession />
         <div className="border p-2">
         <p>Test: getServerSession from page</p>

@@ -2,7 +2,7 @@
 
 import { useSession, signIn, signOut } from "next-auth/react"
 
-export default function LoginComponent() {
+export default function TestLoginComponent() {
     const { data: session } = useSession()
 
     return <>
