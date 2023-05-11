@@ -32,6 +32,29 @@ Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipe
     - `src\app\api\test\serverSideSession\route.ts` - test per verificare la session server side
     - `src\lib\component.template.NextAuthProvider.tsx` - aggiunge l'auth provider al layout
 
+## Auth
+
+    How to use it:
+    Behind the scenes, this creates all the relevant OAuth API routes within /api/auth/* so that auth API requests to:
+
+    GET /api/auth/signin
+    POST /api/auth/signin/:provider
+    GET/POST /api/auth/callback/:provider
+    GET /api/auth/signout
+    POST /api/auth/signout
+    GET /api/auth/session
+    GET /api/auth/csrf
+    GET /api/auth/providers
+
+    Quando configuri l'autenticazione con Google tramite l'API Console di Google Cloud (https://console.cloud.google.com/), devi specificare un'URI di reindirizzamento autorizzata. Questa URI viene utilizzata da Google per reindirizzare l'utente alla tua applicazione dopo che l'utente ha concesso l'autorizzazione. Assicurati che l'URI di reindirizzamento autorizzata nel tuo progetto Google Cloud corrisponda a NEXTAUTH_URL seguito da /api/auth/callback/google. Ad esempio, se il tuo NEXTAUTH_URL è "https://www.esempio.com", l'URI di reindirizzamento autorizzata dovrebbe essere "https://www.esempio.com/api/auth/callback/google".
+
+    Attenzione! http://127.0.0.1 é diverso da http://localhost
+
+
+# TODO
+
+fix tailwind
+
 # Tests
 
 `src\app\test\page.tsx` - test delle dipendenze:

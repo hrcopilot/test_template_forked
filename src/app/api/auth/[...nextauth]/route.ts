@@ -52,9 +52,9 @@ export const authOptions: NextAuthOptions = {
     //   issuer: process.env.AUTH0_ISSUER,
     // }),
   ],
-  theme: {
-    colorScheme: "light",
-  },
+  // theme: {
+  //   colorScheme: "light",
+  // },
   // callbacks: {
   //   async jwt({ token }) {
   //     token.userRole = "admin"

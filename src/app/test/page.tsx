@@ -12,8 +12,9 @@ export default async function Test() {
     } catch (e) {
         console.error(e)
     }
+    
     return (
-        <>
+        <div className='m-4'>
         <p>
             MongoDB:
             <span className={`${isConnected ? 'text-green-600' : 'text-red-800'}`}>
@@ -21,6 +22,6 @@ export default async function Test() {
             </span>
         </p>
         <LoginComponent />
-        </>
+        </div>
     )
 }

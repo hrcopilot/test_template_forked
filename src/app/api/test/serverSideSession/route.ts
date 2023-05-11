@@ -8,5 +8,4 @@ export async function GET(req: NextRequest) {
   const session = await getServerSession(authOptions)
   return NextResponse.json(session);
 
-
 }
