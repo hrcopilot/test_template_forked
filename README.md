@@ -23,7 +23,7 @@ Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipe
     - `yarn add next-auth`
     - env var:
         - console.cloud.google.com -> new project -> schermata di consenso OAuth -> nuovo ID client UI -> client secret, id, // TODO URI
-        - NEXTAUTH_SECRET= `openssl rand -base64 32`
+        - NEXTAUTH_SECRET= `openssl rand -base64 32` or https://generate-secret.vercel.app/32
         - NEXTAUTH_URL [doc](https://next-auth.js.org/configuration/options#nextauth_url) [warning](https://next-auth.js.org/warnings#nextauth_url)
     - `src\app\api\auth\[...nextauth\]\route.ts` - [credential auth](https://github.com/nextauthjs/next-auth-example/blob/main/pages/api/auth/%5B...nextauth%5D.ts): 
         - é importante notare l'esportazione dell'handler come descritto [qui](https://github.com/nextauthjs/next-auth-example/blob/main/pages/api/auth/%5B...nextauth%5D.ts)
@@ -53,7 +53,17 @@ Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipe
 
 # TODO
 
-fix tailwind
+fix tailwind DONE - tailwind ingora la cartella lib, non mettere componenti li
+
+# Warnings:
+
+- NextAuth - getServerSession
+[next-auth][warn][EXPERIMENTAL_API] 
+`getServerSession` is used in a React Server Component.
+https://next-auth.js.org/configuration/nextjs#getServerSession
+https://next-auth.js.org/warnings#EXPERIMENTAL_API
+
+https://stackoverflow.com/questions/75699349/getting-next-authwarnexperimental-api-when-call-await-getserversessionreq
 
 # Tests
 

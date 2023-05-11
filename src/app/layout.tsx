@@ -1,5 +1,5 @@
 
-import { NextAuthProvider } from '@/lib/component.template.NextAuthProvider'
+import { NextAuthProvider } from '@/components/component.template.NextAuthProvider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
