@@ -2,6 +2,8 @@ import NextAuth, { NextAuthOptions } from "next-auth"
 import { NextApiRequest, NextApiResponse } from "next"
 
 import GoogleProvider from "next-auth/providers/google"
+import clientPromise from "@/lib/util.template.mongodb"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 // import FacebookProvider from "next-auth/providers/facebook"
 // import GithubProvider from "next-auth/providers/github"
 // import TwitterProvider from "next-auth/providers/twitter"
@@ -11,6 +13,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
+  adapter: MongoDBAdapter(clientPromise, { databaseName: 'auth' }),
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
     /* EmailProvider({

@@ -8,6 +8,9 @@ Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipe
 - [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 # How To use
 
+- Configure OAuth Provider
+- Setup environment variables (locals and Vercel)
+
 First, run the development server:
 
 yarn dev
@@ -25,6 +28,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - test getServerSession in page
 - `src\app\api\test\serverSideSession\route.ts`, `src\components\test.template.clientFetchServerSideSession.tsx` - test getServerSession in API route
 
+# Change Logs
+- Added adapter to MongoDB (REF)[https://authjs.dev/reference/adapter/mongodb]
 # How It's Made
 ## Initialize Project
 run `yarn create-next-app@latest`
