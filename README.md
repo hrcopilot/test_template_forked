@@ -8,7 +8,7 @@ Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipe
 - [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 # How To use
 
-- Configure OAuth Provider
+- Configure OAuth Provider TODO
 - Setup environment variables (locals and Vercel)
 
 First, run the development server:
@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-# Tests
+## Tests
 
 `src\app\test\page.tsx` - testing page:
 
@@ -28,8 +28,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - test getServerSession in page
 - `src\app\api\test\serverSideSession\route.ts`, `src\components\test.template.clientFetchServerSideSession.tsx` - test getServerSession in API route
 
-# Change Logs
-- Added adapter to MongoDB (REF)[https://authjs.dev/reference/adapter/mongodb]
+## Change Logs
+- Added adapter to MongoDB (REF)[https://authjs.dev/reference/adapter/mongodb] dependencies: `@next-auth/mongodb-adapter`
+- Converted repo into template
 # How It's Made
 ## Initialize Project
 run `yarn create-next-app@latest`
@@ -66,17 +67,23 @@ run `yarn add next-auth`
     - NEXTAUTH_URL=Your Exactly Authorized redirect URI (localhost for dev and vercel.app for production)
 
 
-<!-- # Warnings:
+# Warnings & Bugs:
 
-- NextAuth - getServerSession
-[next-auth][warn][EXPERIMENTAL_API] 
-`getServerSession` is used in a React Server Component.
-https://next-auth.js.org/configuration/nextjs#getServerSession
-https://next-auth.js.org/warnings#EXPERIMENTAL_API
-https://stackoverflow.com/questions/75699349/getting-next-authwarnexperimental-api-when-call-await-getserversessionreq -->
+## [EXPERIMENTAL WARNING] Message: [next-auth][warn][EXPERIMENTAL_API] getServerSession is used in a React Server Component.
+NextAuth - getServerSession call
+- (REF)[https://next-auth.js.org/configuration/nextjs#getServerSession]
+- (REF)[https://next-auth.js.org/warnings#EXPERIMENTAL_API]
+- Solution: (REF)[https://stackoverflow.com/questions/75699349/getting-next-authwarnexperimental-api-when-call-await-getserversessionreq]
+- TODO to solve: do you still see warning on getServerSession call?
 
+## [EXPERIMENTAL WARNING] Message: Module parse failed: The top-level-await experiment is not enabled (set experiments.topLevelAwait: true to enabled it)
+on call connectMongo (src\lib\util.template.mongoose.ts)
+- (REF)[https://github.com/tc39/proposal-top-level-await#solution-top-level-await]
+- (REF)[https://github.com/vercel/next.js/issues/43382]
+- Solution (REF)[https://stackoverflow.com/a/75860669]
+- TODO to solve: can you remove extra configuration in `next.config.js`?
 
-# Contributors
+<!-- # Contributors
 
 We warmly invite you to contribute to our Next.js 13 project template! This project aims to provide a robust and efficient setup for developers to kick-start their projects. By contributing, you will be part of a thriving community working together to improve the developer experience and make an impact on the open-source ecosystem.
 
@@ -93,7 +100,7 @@ Documentation: Keeping our documentation up-to-date and clear is essential. If y
 
 Community Support: Engage with the community by answering questions, providing guidance, or sharing your own experiences and projects based on our template.
 
-We welcome contributors of all skill levels, and we value your time and effort. Our community is built on collaboration, and we believe that your contributions will help us grow and improve together.
+We welcome contributors of all skill levels, and we value your time and effort. Our community is built on collaboration, and we believe that your contributions will help us grow and improve together. -->
 <!--     
 ## Auth
 
