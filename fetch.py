@@ -25,9 +25,11 @@ def update_project_from_template(temp_dir, project_path):
                 else:
                     shutil.copy(file_path, project_file_path)
                     print(f"Updated file {project_file_path} from template")
+                    subprocess.check_call(['git', 'add', project_file_path])
         else:
             shutil.copy(file_path, project_file_path)
             print(f"Copied new file {project_file_path} from template")
+            subprocess.check_call(['git', 'add', project_file_path])
 
 def cleanup_temp_dir(temp_dir):
     shutil.rmtree(temp_dir, ignore_errors=True)
