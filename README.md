@@ -30,7 +30,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Change Logs
 - Added adapter to MongoDB (REF)[https://authjs.dev/reference/adapter/mongodb] dependencies: `@next-auth/mongodb-adapter`
-- ADD fetch.py to update template (updated3)
+- ADD fetch.py to update template
 # How It's Made
 ## Initialize Project
 run `yarn create-next-app@latest`

@@ -4,6 +4,7 @@ import shutil
 import tempfile
 import sys
 
+# Definisci l'URL del tuo repository template
 template_repo_url = "https://github.com/cechecco/template.git"
 
 def clone_template_to_temp_dir(temp_dir):
@@ -12,7 +13,8 @@ def clone_template_to_temp_dir(temp_dir):
 def update_project_from_template(temp_dir, project_path):
     template_files = [os.path.join(root, file) 
                       for root, _, files in os.walk(temp_dir) 
-                      for file in files]
+                      for file in files 
+                      if '.git' not in root]
 
     for file_path in template_files:
         relative_path = os.path.relpath(file_path, temp_dir)
@@ -25,11 +27,9 @@ def update_project_from_template(temp_dir, project_path):
                 else:
                     shutil.copy(file_path, project_file_path)
                     print(f"Updated file {project_file_path} from template")
-                    subprocess.check_call(['git', 'add', project_file_path])
         else:
             shutil.copy(file_path, project_file_path)
             print(f"Copied new file {project_file_path} from template")
-            subprocess.check_call(['git', 'add', project_file_path])
 
 def cleanup_temp_dir(temp_dir):
     shutil.rmtree(temp_dir, ignore_errors=True)
