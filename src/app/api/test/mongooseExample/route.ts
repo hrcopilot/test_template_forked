@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   try {
     await connectMongo();
+    
     const test = await Test.create(await req.json());
 
     return NextResponse.json({ test });
