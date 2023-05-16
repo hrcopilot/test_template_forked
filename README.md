@@ -1,6 +1,6 @@
 Questo é Il Template di un Progetto Next.js 13 (with app dir) con tutte le dipendenze necessarie per iniziare a lavorare.
 
-# Stack
+# Stack 1
 
 - [Next.js 13](https://nextjs.org/docs/getting-started/installation)
 - [Mongo DB](https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/)
